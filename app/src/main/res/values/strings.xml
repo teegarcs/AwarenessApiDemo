@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">AwarenessDemo</string>
+    <string name="activity_label">Current Activity: </string>
+    <string name="headphone_label">Headphone State: </string>
+    <string name="activity_likelihood">Likelihood: </string>
+    <string name="activity_button">Get Activity</string>
+    <string name="headphone_button">Get Headphone State</string>
+    <string name="latitude_label">Latitude: </string>
+    <string name="longitude_label">Longitude: </string>
+    <string name="location_button">Get Location</string>
+    <string name="current_place">Current Place: </string>
+    <string name="place_button">Get Place</string>
+    <string name="weather_button">Get Weather</string>
+    <string name="weather_label">Current Weather: </string>
+    <string name="temperature_label">Temperature: </string>
+    <string name="register_button">Register Fence</string>
+    <string name="unregister_button">Un-Register Fence</string>
+
+</resources>

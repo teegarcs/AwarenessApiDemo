@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.captech.teegarden.awarenessdemo">
+
+    <!--
+    Needed for Location and Beacon Fence
+    Needed for following snapshots: Locations, places, weather, beacon
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!--
+    Needed for Detected Activity Fence
+    Needed for Detected Activity Snapshot
+    -->
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+
+    <application
+        android:name=".AwareApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".snapshot.SnapShotActivity" />
+        <activity android:name=".headphone.HeadphoneActivity" />
+        <activity android:name=".time.TimeActivity" />
+        <activity android:name=".weather.LocationActivity"/>
+
+
+        <receiver android:name=".headphone.HeadphoneBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="com.captech.teegarden.awarenessdemo.HEADPHONEFENCE" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".time.TimeStillBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="com.captech.teegarden.awarenessdemo.TIMESTILLFENCE" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".weather.LocationBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="com.captech.teegarden.awarenessdemo.LOCATIONFENCE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- must add to use awareness -->
+
+        <meta-data
+            android:name="com.google.android.awareness.API_KEY"
+            android:value="AIzaSyANSPM6V5UfTAjpxEqUWKc7-ohGClV9-28" />
+
+        <!-- must add if you are getting places snapshot -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyANSPM6V5UfTAjpxEqUWKc7-ohGClV9-28" />
+
+        <!-- must add if you are using beacon fences -->
+        <meta-data
+            android:name="com.google.android.nearby.messages.API_KEY"
+            android:value="AIzaSyANSPM6V5UfTAjpxEqUWKc7-ohGClV9-28" />
+
+
+    </application>
+
+</manifest>
